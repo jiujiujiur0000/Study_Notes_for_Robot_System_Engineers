@@ -1,0 +1,27 @@
+.vscode/
+
+# 基本语法
+# - 注释：以 `#` 开头的行是注释，Git 会忽略这些行。
+
+# - 忽略特定文件：直接写文件名或路径。
+#   - `example.txt`：忽略当前目录下的 `example.txt` 文件。
+
+# - 忽略特定目录：以 `/` 结尾的行表示目录。
+#   - `logs/`：忽略当前目录下的 `logs` 文件夹及其所有内容。
+
+# - 忽略特定模式的文件：使用通配符 `*`。
+#   - `*.log`：忽略所有扩展名为 `.log` 的文件。
+
+# - 忽略特定模式的文件，但排除某些文件：使用 `!`。
+#   - `*.log`：忽略所有 `.log` 文件。
+#   - `!important.log`：但不忽略 `important.log` 文件。
+
+# - 忽略特定模式的文件，但只在当前目录下生效：使用 `/*`。
+#   - `/*.log`：忽略当前目录下的所有 `.log` 文件，但不包括子目录中的 `.log` 文件。
+
+# GitHub 提供了许多常见的 `.gitignore` 文件模板，你可以根据项目类型选择合适的模板。访问 [GitHub 的 `.gitignore` 模板库](https://github.com/github/gitignore) 获取更多模板。
+
+# ### 注意事项
+# - **`.gitignore` 文件只对未被跟踪的文件生效**：如果某个文件已经被 Git 跟踪，即使你在 `.gitignore` 文件中添加了该文件，Git 仍然会跟踪它。要停止跟踪某个文件，可以使用 `git rm --cached <file>` 命令。
+# - **`.gitignore` 文件应该提交到版本控制系统中**：这样其他开发者在克隆项目时，也能使用相同的忽略规则。
+# - **`.gitignore` 文件只对当前项目生效**：如果你需要全局忽略某些文件，可以使用 `git config --global core.excludesfile ~/.gitignore_global` 命令设置全局 `.gitignore` 文件。
